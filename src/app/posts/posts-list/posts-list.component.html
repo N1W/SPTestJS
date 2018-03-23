@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1>All Posts</h1>
+    <ul class="list-group">
+      <app-posts-item
+        *ngFor="let item of posts.reverse(); let i = index"
+        [posts]="item"
+        [index]="item.id">
+      </app-posts-item>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<li class="list-group-item clearfix">
+  <a [routerLink]="[index] + '/comments'">
+    <div class="pull-left">
+      <h4 class="list-group-item-heading">{{posts.title}}</h4>
+      <p class="list-group-item-text">{{posts.body}}</p>
+    </div>
+  </a>
+  <div class="row">
+    <button (click)="deletePost()" class="btn btn-danger">Delete</button>
+    <button (click)="edit()" class="btn btn-success">Edit</button>
+  </div>
+</li>
+

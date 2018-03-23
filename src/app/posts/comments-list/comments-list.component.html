@@ -1,0 +1,28 @@
+<a class="nav-link" routerLink="/posts"> << Back to Posts</a>
+<h1>Post</h1>
+<div class="row" *ngIf="loading;else wait">
+  <div class="col">
+    <h4 class="list-group-item-heading mx-auto">{{post.title}}</h4>
+    <p class="list-group-item-text mx-auto">{{post.body}}</p>
+  </div>
+</div>
+<ng-template #wait>
+  <p>loading...</p>
+</ng-template>
+<h1>Comments</h1>
+<div class="row" *ngIf="!empty;else sorry">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <app-comment-item
+        *ngFor="let item of comments; let i = index"
+        [comment]="item"
+        [index]="item.id">
+      </app-comment-item>
+    </ul>
+  </div>
+</div>
+<ng-template #sorry>
+  <p>Sorry! This post has no comments at the moment.</p>
+</ng-template>
+
+
